@@ -1,6 +1,8 @@
-import {assert} from "chai";
-import {loop} from "../../src/main";
-import {Game, Memory} from "./mock"
+import { assert } from "chai";
+import { loop } from "../../src/main";
+import { Game, Memory } from "./mock";
+import { harvsterImpl } from "../../src/component/role/impl/harvsterImpl";
+import { harvster } from "../../src/component/role/harvester";
 
 describe("main", () => {
   before(() => {
@@ -21,5 +23,10 @@ describe("main", () => {
 
   it("should return void when called with no context", () => {
     assert.isUndefined(loop());
+  });
+  it("should retuen true", () => {
+    let o: harvster;
+    o = new harvsterImpl();
+    assert.isTrue(o.prepare(Game.creeps[0]));
   });
 });
