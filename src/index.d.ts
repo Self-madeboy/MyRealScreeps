@@ -1,9 +1,11 @@
 interface CreepMemory {
-  sourceId: Id<Source>;
-  role: string;
-  room: string;
-  working: boolean;
+  sourceId?: string
+  targetId?:string
+  role?: string;
+  room?: string;
+  working?: boolean;
 }
+
 type BodyAutoConfigConstant =
   | "harvester"
   | "worker"
