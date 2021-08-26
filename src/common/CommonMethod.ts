@@ -18,11 +18,25 @@ export class CommonMethod {
     return source;
   }
   /**
-   * 去指定建筑工作
+   * 传送energy
    * @param creep
    *
    */
-  public static getTarget(creep: Creep, structure: ConstructionSite): void {
+  public static goTarget(creep: Creep, roomPosition: Structure): void {
+    const code = creep.moveTo(roomPosition, {
+      reusePath: 6,
+      visualizePathStyle: { fill: "#4e6ef2", lineStyle: "dotted" }
+    });
+    if (code === OK) {
+      creep.transfer(roomPosition,RESOURCE_ENERGY);
+    }
+  }
+  /**
+   * build建筑
+   * @param creep
+   * @param structure 需要buil的建筑
+   */
+  public static buildTarget(creep: Creep, structure:ConstructionSite):void {
     const code = creep.moveTo(structure, {
       reusePath: 6,
       visualizePathStyle: { fill: "#4e6ef2", lineStyle: "dotted" }
@@ -31,4 +45,19 @@ export class CommonMethod {
       creep.build(structure);
     }
   }
+  /**
+   * harvest energy
+   * @param creep
+   * @param source
+   */
+  public static haverst(creep: Creep,source:Source):void {
+    const code = creep.moveTo(source, {
+      reusePath: 6,
+      visualizePathStyle: { fill: "#4e6ef2", lineStyle: "dotted" }
+    });
+    if (code === OK) {
+      creep.harvest(source);
+    }
+  }
+
 }

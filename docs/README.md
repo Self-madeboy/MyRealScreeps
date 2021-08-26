@@ -1,4 +1,4 @@
-# Introduction
+<!-- # Introduction
 
 Screeps Typescript Starter is a starting point for a Screeps AI written in [Typescript](http://www.typescriptlang.org/). It provides everything you need to start writing your AI whilst leaving `main.ts` as empty as possible.
 
@@ -31,4 +31,4 @@ git clone https://github.com/screepers/screeps-typescript-starter.git
 ```
 
 Extract it to a folder, and [let's get started](getting-started/installation.md)!
-
+ -->

@@ -6,7 +6,7 @@ interface CreepMemory {
   working?: boolean;
 }
 
-type BodyAutoConfigConstant =
+type creepsRole =
   | "harvester"
   | "worker"
   | "upgrader"
@@ -17,3 +17,5 @@ type BodyAutoConfigConstant =
   | "healer"
   | "dismantler"
   | "remoteHarvester";
+
+
