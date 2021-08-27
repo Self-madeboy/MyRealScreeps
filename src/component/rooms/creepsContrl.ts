@@ -1,13 +1,15 @@
-import spawnCreep from "component/spawn/spawnCreep";
+import { filter } from "lodash";
 
 export default class CreepsContrl {
-private minNumberOfHarvesters=3
-  public judgeScreep() {
-      let numberOfHarvesters = _.sum(Game.creeps, 'harvester');
-      if (this.minNumberOfHarvesters > numberOfHarvesters) {
-        // spawnCreep.spawn()
-      }
-
+  public static minNumberOfHarvesters = 5;
+  public static judgeScreep(role: string): boolean {
+    let roleOfHarvesters = _.filter(Game.creeps, c => c.memory.role === role)
+    let numberOfHarvesters=roleOfHarvesters.length
+    console.log(numberOfHarvesters);
+    if (this.minNumberOfHarvesters > numberOfHarvesters) {
+      // spawnCreep.spawn()
+      return true;
     }
-
+    return false;
+  }
 }

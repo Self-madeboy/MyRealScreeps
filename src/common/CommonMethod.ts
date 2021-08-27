@@ -2,7 +2,9 @@
  * 角色工作公共方法
  */
 export class CommonMethod {
+ public static SpawnOfMy = "buibui-1"
   /**
+   *
    * 获取资源id
    * @param creep
    * @returns Source

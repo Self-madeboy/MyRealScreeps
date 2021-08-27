@@ -1,22 +1,22 @@
-abstract class BaseRole {
+interface BaseRoles {
   /**
    * 角色身体部件
    */
-  public static baseBody: Array<BodyPartConstant> = [MOVE, WORK, CARRY];
+   baseBody: Array<BodyPartConstant>
   /**
    * 角色
    */
-  public creep: Creep;
+   creep: Creep;
   /**
    *
    * 角色构造函数,该函数完成角色初始化功能
    * @param creep 需要初始化的角色
    */
-  public constructor(creep: Creep) {
-    this.creep = creep;
-  }
+  // public constructor(creep: Creep) {
+  //   this.creep = creep;
+  // }
   /**
    * 角色行为
    */
-  public abstract run(): void;
+    run(): void;
 }
