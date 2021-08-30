@@ -7,11 +7,24 @@ export default class SpwanCreep implements BaseRoles {
    * creep body
    */
   baseBody: BodyPartConstant[] = [MOVE, WORK, CARRY];
+  /**
+   * Creep
+   */
   public creep: Creep;
+  /**
+   * role
+   */
   public role: creepsRole = "harvester";
+  /**
+   *
+   * @param creep 构造函数
+   */
   constructor(creep: Creep) {
     this.creep = creep;
   }
+  /**
+   * 该函数完成判断和生成角色任务
+   */
   public run(): void {
     /**
      * 判断该角色存储能量
@@ -33,7 +46,7 @@ export default class SpwanCreep implements BaseRoles {
    */
   goBuild() {
     const spwawn = Game.spawns[CommonMethod.SpawnOfMy];
-    CommonMethod.goTarget(this.creep, spwawn);
+    CommonMethod.goTransfer(this.creep, spwawn);
   }
   /**
    * 挖
@@ -41,7 +54,7 @@ export default class SpwanCreep implements BaseRoles {
   goHarvest() {
     const source = CommonMethod.getSource(this.creep);
     if (source) {
-      CommonMethod.haverst(this.creep, source);
+      CommonMethod.haverstSource(this.creep, source);
     }
   }
 }

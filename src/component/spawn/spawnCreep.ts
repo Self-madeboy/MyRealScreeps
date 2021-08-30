@@ -6,7 +6,7 @@ export default class spawnCreep {
    * @param body
    * @param role
    */
-    public static spawn(body: Array<BodyPartConstant>, creepsRole: creepsRole) {
+  public static spawn(body: Array<BodyPartConstant>, creepsRole: creepsRole) {
     Game.spawns[CommonMethod.SpawnOfMy].spawnCreep(body, `${Game.time}`, {
       memory: { role: creepsRole }
     });

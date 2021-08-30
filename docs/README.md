@@ -32,3 +32,9 @@ git clone https://github.com/screepers/screeps-typescript-starter.git
 
 Extract it to a folder, and [let's get started](getting-started/installation.md)!
  -->
+## 这版harvest需要该语句启动
+```
+Game.spawns['Spawn1'].spawnCreep([WORK, CARRY, MOVE], 'Worker1', {
+    memory: {role: 'harvester'}
+});
+```
